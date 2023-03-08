@@ -36,7 +36,7 @@ License: For each use you must have a valid license purchased only from above li
 							<span style="background: linear-gradient(to right, #12CE5D 0%, #FFD80C 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
 								<span id="kt_landing_hero_text">All 50 States</span>
 							</span>
-								<h3 class="text-gray-500 mb-15">Peak Permits is used by contractors and
+								<h3 class="text-white mb-15">Peak Permits is used by contractors and
 									<br>homeowners to handle their entire permitting process<br> from end to end</h3>
 
 							</h1>
@@ -250,7 +250,7 @@ License: For each use you must have a valid license purchased only from above li
 										</div>
 										<!--end::Value-->
 										<!--begin::Label-->
-										<span class="text-gray-600 fw-semibold fs-5 lh-0">Success Rate</span>
+										<span class="text-white fw-semibold fs-5 lh-0">Success Rate</span>
 										<!--end::Label-->
 									</div>
 									<!--end::Info-->
@@ -277,7 +277,7 @@ License: For each use you must have a valid license purchased only from above li
 										</div>
 										<!--end::Value-->
 										<!--begin::Label-->
-										<span class="text-gray-600 fw-semibold fs-5 lh-0">Avg. Approval Time</span>
+										<span class="text-white fw-semibold fs-5 lh-0">Avg. Approval Time</span>
 										<!--end::Label-->
 									</div>
 									<!--end::Info-->
@@ -304,7 +304,7 @@ License: For each use you must have a valid license purchased only from above li
 										</div>
 										<!--end::Value-->
 										<!--begin::Label-->
-										<span class="text-gray-600 fw-semibold fs-5 lh-0">Projects Approved</span>
+										<span class="text-white fw-semibold fs-5 lh-0">Projects Approved</span>
 										<!--end::Label-->
 									</div>
 									<!--end::Info-->
@@ -315,16 +315,16 @@ License: For each use you must have a valid license purchased only from above li
 						</div>
 						<!--end::Statistics-->
 						<!--begin::Testimonial-->
-						<div class="fs-2 fw-semibold text-muted text-center mb-3">
-						<span class="fs-1 lh-1 text-gray-700">“</span>When you care about your topic, you’ll write about it in a
+						<div class="fs-2 fw-semibold  text-white text-center mb-3">
+						<span class="fs-1 lh-1 text-white">“</span>When you care about your topic, you’ll write about it in a
 						<br />
-						<span class="text-gray-700 me-1">more powerful</span>, emotionally expressive way
-						<span class="fs-1 lh-1 text-gray-700">“</span></div>
+						<span class="me-1 text-white">more powerful</span>, emotionally expressive way
+						<span class="fs-1 lh-1 text-white">“</span></div>
 						<!--end::Testimonial-->
 						<!--begin::Author-->
 						<div class="fs-2 fw-semibold text-muted text-center">
-							<a href="../../demo1/dist/account/security.html" class="link-primary fs-4 fw-bold">Marcus Levy,</a>
-							<span class="fs-4 fw-bold text-gray-600">KeenThemes CEO</span>
+							<a href="#" class="text-white fs-4 fw-bold">Marcus Levy,</a>
+							<span class="fs-4 fw-bold text-white">PEAK PERMITS</span>
 						</div>
 						<!--end::Author-->
 					</div>
@@ -543,7 +543,7 @@ License: For each use you must have a valid license purchased only from above li
 							<!--begin::Heading-->
 							<div class="mb-13 text-center">
 								<h1 class="fs-2hx fw-bold text-white mb-5" id="pricing" data-kt-scroll-offset="{default: 100, lg: 150}">Your time and talent is worth much more</h1>
-								<div class="text-gray-600 fw-semibold fs-5">Geting permits is a costly, time-consuming process that sucks the life out of a business.
+								<div class="text-white fw-semibold fs-5">Geting permits is a costly, time-consuming process that sucks the life out of a business.
 								<br />Apply, Track and Pay for permits in one place!</div>
 							</div>
 							<!--end::Heading-->
@@ -575,7 +575,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Sub-title-->
 						<div class="fs-16 text-muted fw-bold">If you're ready to get started please fill in the form below. It should
 						<br />take less than 60 seconds. If you have any questions please contact
-						<br /> us at <a href="#">info@getfastpermits.com</a></div>
+						<br /> us at <a href="#">nfo@peakpermits.com</a></div>
 						<!--end::Sub-title=-->
 					</div>
 					<!--end::Heading-->
@@ -595,26 +595,27 @@ License: For each use you must have a valid license purchased only from above li
 							<h1 class="mt-7">Permit Submitter</h1>
 						</div>
 						<div class="card-body p-lg-20">
-							<form>
+							<form method="POST" enctype="multipart/form-data" action="{% url 'frontend-index-page' %}">
+								{% csrf_token %}
 								<div class="mb-10">
-									<label for="exampleFormControlInput1" class="required form-label">Name</label>
-									<input type="text" class="form-control form-control-solid" placeholder=""/>
+									<label class="required form-label">Name</label>
+									<input type="text" class="form-control form-control-solid" name="name" placeholder="" required/>
 								</div>
 								<div class="mb-10">
-									<label for="exampleFormControlInput1" class="required form-label">Email</label>
-									<input type="email" class="form-control form-control-solid" placeholder=""/>
+									<label class="required form-label">Email</label>
+									<input type="email" class="form-control form-control-solid" name="email" placeholder="" required/>
 								</div>
 								<div class="mb-10">
-									<label for="exampleFormControlInput1" class="required form-label">Phone Number</label>
-									<input type="text" class="form-control form-control-solid" placeholder=""/>
+									<label class="required form-label">Phone Number</label>
+									<input type="text" class="form-control form-control-solid" name="phone_number" placeholder="" required/>
 								</div>
 								<div class="mb-10">
-									<label for="exampleFormControlInput1" class="required form-label">Project Address</label>
-									<input type="text" class="form-control form-control-solid" placeholder=""/>
+									<label class="required form-label">Project Address</label>
+									<input type="text" class="form-control form-control-solid" name="project_address" placeholder="" required/>
 								</div>
 								<div class="mb-10">
-									<label for="exampleFormControlInput1" class="required form-label">Project Documents</label>
-									<input type="file" class="form-control form-control-solid" placeholder=""/>
+									<label class="required form-label">Project Documents</label>
+									<input type="file" class="form-control form-control-solid" name="project_documents" placeholder="" multiple required/>
 								</div>
 								<div class="mb-5">
 									<button type="submit" class="btn btn-primary">Submit</button>
@@ -652,8 +653,8 @@ License: For each use you must have a valid license purchased only from above li
 									<h2 class="text-white">Would you need a Custom License?</h2>
 									<!--end::Title-->
 									<!--begin::Text-->
-									<span class="fw-normal fs-4 text-gray-700">Email us to
-									<a href="https://keenthemes.com/support" class="text-white opacity-50 text-hover-primary">support@keenthemes.com</a></span>
+									<span class="fw-normal fs-4 text-white">Email us to
+									<a href="https://keenthemes.com/support" class="text-white text-hover-primary">support@keenthemes.com</a></span>
 									<!--end::Text-->
 								</div>
 								<!--end::Block-->
@@ -663,8 +664,8 @@ License: For each use you must have a valid license purchased only from above li
 									<h2 class="text-white">How About a Custom Project?</h2>
 									<!--end::Title-->
 									<!--begin::Text-->
-									<span class="fw-normal fs-4 text-gray-700">Use Our Custom Development Service.
-									<a href="../../demo1/dist/pages/user-profile/overview.html" class="text-white opacity-50 text-hover-primary">Click to Get a Quote</a></span>
+									<span class="fw-normal fs-4 text-white">Use Our Custom Development Service.
+									<a href="../../demo1/dist/pages/user-profile/overview.html" class="text-white text-hover-primary">Click to Get a Quote</a></span>
 									<!--end::Text-->
 								</div>
 								<!--end::Block-->
@@ -677,61 +678,61 @@ License: For each use you must have a valid license purchased only from above li
 									<!--begin::Links-->
 									<div class="d-flex fw-semibold flex-column me-20">
 										<!--begin::Subtitle-->
-										<h4 class="fw-bold text-gray-400 mb-6">More for Metronic</h4>
+										<h4 class="fw-bold text-white mb-6">More for Metronic</h4>
 										<!--end::Subtitle-->
 										<!--begin::Link-->
-										<a href="https://keenthemes.com/faqs" class="text-white opacity-50 text-hover-primary fs-5 mb-6">FAQ</a>
+										<a href="https://keenthemes.com/faqs" class="text-white text-hover-primary fs-5 mb-6">FAQ</a>
 										<!--end::Link-->
 										<!--begin::Link-->
-										<a href="https://preview.keenthemes.com/html/metronic/docs" class="text-white opacity-50 text-hover-primary fs-5 mb-6">Documentaions</a>
+										<a href="https://preview.keenthemes.com/html/metronic/docs" class="text-white  text-hover-primary fs-5 mb-6">Documentaions</a>
 										<!--end::Link-->
 										<!--begin::Link-->
-										<a href="https://www.youtube.com/c/KeenThemesTuts/videos" class="text-white opacity-50 text-hover-primary fs-5 mb-6">Video Tuts</a>
+										<a href="https://www.youtube.com/c/KeenThemesTuts/videos" class="text-white  text-hover-primary fs-5 mb-6">Video Tuts</a>
 										<!--end::Link-->
 										<!--begin::Link-->
-										<a href="https://preview.keenthemes.com/html/metronic/docs/getting-started/changelog" class="text-white opacity-50 text-hover-primary fs-5 mb-6">Changelog</a>
+										<a href="https://preview.keenthemes.com/html/metronic/docs/getting-started/changelog" class="text-white text-hover-primary fs-5 mb-6">Changelog</a>
 										<!--end::Link-->
 										<!--begin::Link-->
-										<a href="https://devs.keenthemes.com/" class="text-white opacity-50 text-hover-primary fs-5 mb-6">Support Forum</a>
+										<a href="https://devs.keenthemes.com/" class="text-white  text-hover-primary fs-5 mb-6">Support Forum</a>
 										<!--end::Link-->
 										<!--begin::Link-->
-										<a href="https://keenthemes.com/blog" class="text-white opacity-50 text-hover-primary fs-5">Blog</a>
+										<a href="https://keenthemes.com/blog" class="text-white  text-hover-primary fs-5">Blog</a>
 										<!--end::Link-->
 									</div>
 									<!--end::Links-->
 									<!--begin::Links-->
 									<div class="d-flex fw-semibold flex-column ms-lg-20">
 										<!--begin::Subtitle-->
-										<h4 class="fw-bold text-gray-400 mb-6">Stay Connected</h4>
+										<h4 class="fw-bold text-white mb-6">Stay Connected</h4>
 										<!--end::Subtitle-->
 										<!--begin::Link-->
 										<a href="https://www.facebook.com/keenthemes" class="mb-6">
 											<img src="assets/media/svg/brand-logos/facebook-4.svg" class="h-20px me-2" alt="" />
-											<span class="text-white opacity-50 text-hover-primary fs-5 mb-6">Facebook</span>
+											<span class="text-white text-hover-primary fs-5 mb-6">Facebook</span>
 										</a>
 										<!--end::Link-->
 										<!--begin::Link-->
 										<a href="https://github.com/KeenthemesHub" class="mb-6">
 											<img src="assets/media/svg/brand-logos/github.svg" class="h-20px me-2" alt="" />
-											<span class="text-white opacity-50 text-hover-primary fs-5 mb-6">Github</span>
+											<span class="text-white text-hover-primary fs-5 mb-6">Github</span>
 										</a>
 										<!--end::Link-->
 										<!--begin::Link-->
 										<a href="https://twitter.com/keenthemes" class="mb-6">
 											<img src="assets/media/svg/brand-logos/twitter.svg" class="h-20px me-2" alt="" />
-											<span class="text-white opacity-50 text-hover-primary fs-5 mb-6">Twitter</span>
+											<span class="text-white text-hover-primary fs-5 mb-6">Twitter</span>
 										</a>
 										<!--end::Link-->
 										<!--begin::Link-->
 										<a href="https://dribbble.com/keenthemes" class="mb-6">
 											<img src="assets/media/svg/brand-logos/dribbble-icon-1.svg" class="h-20px me-2" alt="" />
-											<span class="text-white opacity-50 text-hover-primary fs-5 mb-6">Dribbble</span>
+											<span class="text-white text-hover-primary fs-5 mb-6">Dribbble</span>
 										</a>
 										<!--end::Link-->
 										<!--begin::Link-->
 										<a href="https://www.instagram.com/keenthemes" class="mb-6">
 											<img src="assets/media/svg/brand-logos/instagram-2-1.svg" class="h-20px me-2" alt="" />
-											<span class="text-white opacity-50 text-hover-primary fs-5 mb-6">Instagram</span>
+											<span class="text-white text-hover-primary fs-5 mb-6">Instagram</span>
 										</a>
 										<!--end::Link-->
 									</div>
@@ -759,20 +760,20 @@ License: For each use you must have a valid license purchased only from above li
 								</a>
 								<!--end::Logo image-->
 								<!--begin::Logo image-->
-								<span class="mx-5 fs-6 fw-semibold text-gray-600 pt-1" href="https://keenthemes.com">&copy; 2022 Keenthemes Inc.</span>
+								<span class="mx-5 fs-6 fw-semibold text-white pt-1" href="https://keenthemes.com">&copy; Peak Permits.</span>
 								<!--end::Logo image-->
 							</div>
 							<!--end::Copyright-->
 							<!--begin::Menu-->
 							<ul class="menu menu-gray-600 menu-hover-primary fw-semibold fs-6 fs-md-5 order-1 mb-5 mb-md-0">
 								<li class="menu-item">
-									<a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
+									<a href="https://keenthemes.com" target="_blank" class="menu-link px-2 text-white">About</a>
 								</li>
 								<li class="menu-item mx-5">
-									<a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
+									<a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2 text-white">Support</a>
 								</li>
 								<li class="menu-item">
-									<a href="" target="_blank" class="menu-link px-2">Purchase</a>
+									<a href="" target="_blank" class="menu-link px-2 text-white">Purchase</a>
 								</li>
 							</ul>
 							<!--end::Menu-->
