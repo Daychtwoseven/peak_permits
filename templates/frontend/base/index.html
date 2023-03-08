@@ -42,7 +42,7 @@ License: For each use you must have a valid license purchased only from above li
 							</h1>
 							<!--end::Title-->
 							<!--begin::Action-->
-							<a href="#learn-more" class="btn btn-primary">Learn More</a>
+							<a href="#permit-submitter" class="btn btn-success">Get Started</a>
 							<!--end::Action-->
 						</div>
 						<!--end::Heading-->
@@ -272,15 +272,16 @@ License: For each use you must have a valid license purchased only from above li
 						<!--end::Statistics-->
 						<!--begin::Testimonial-->
 						<div class="fs-2 fw-semibold  text-white text-center mb-3">
-						<span class="fs-1 lh-1 text-white">“</span>When you care about your topic, you’ll write about it in a
+						<span class="fs-1 lh-1 text-white">“</span>Remove the stress and anxiety of delays
 						<br />
-						<span class="me-1 text-white">more powerful</span>, emotionally expressive way
+						<span class="me-1 text-white">that are</span>, common with permits.
 						<span class="fs-1 lh-1 text-white">“</span></div>
 						<!--end::Testimonial-->
 						<!--begin::Author-->
 						<div class="fs-2 fw-semibold text-muted text-center">
-							<a href="#" class="text-white fs-4 fw-bold">Marcus Levy,</a>
-							<span class="fs-4 fw-bold text-white">PEAK PERMITS</span>
+							<span class="fs-4 fw-bold text-white">Get Started with</span>
+							<a href="https://www.peakpermits.com/" class="text-white fs-4 fw-bold">PeakPermits.com</a>
+							<span class="fs-4 fw-bold text-white">Today</span>
 						</div>
 						<!--end::Author-->
 					</div>
@@ -532,7 +533,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Sub-title-->
 						<div class="fs-16 text-muted fw-bold">If you're ready to get started please fill in the form below. It should
 						<br />take less than 60 seconds. If you have any questions please contact
-						<br /> us at <a href="#">nfo@peakpermits.com</a></div>
+						<br /> us at <a href="#">info@peakpermits.com</a></div>
 						<!--end::Sub-title=-->
 					</div>
 					<!--end::Heading-->
@@ -552,7 +553,19 @@ License: For each use you must have a valid license purchased only from above li
 							<h1 class="mt-7">Permit Submitter</h1>
 						</div>
 						<div class="card-body p-lg-20">
-							<form method="POST" enctype="multipart/form-data" action="{% url 'frontend-index-page' %}">
+								{% if request.session.statusMsg %}
+								<!--begin::Alert-->
+								<div class="alert alert-success d-flex align-items-center p-3">
+									<!--begin::Wrapper-->
+									<div class="d-flex flex-column">
+										<!--begin::Title-->
+										<h4 class="mb-1 text-success">Success!</h4>
+									</div>
+									<!--end::Wrapper-->
+								</div>
+								<!--end::Alert-->
+								{% endif %}
+							<form method="POST" action="{% url 'frontend-index-page' %}">
 								{% csrf_token %}
 								<div class="mb-10">
 									<label class="required form-label">Name</label>
@@ -565,14 +578,6 @@ License: For each use you must have a valid license purchased only from above li
 								<div class="mb-10">
 									<label class="required form-label">Phone Number</label>
 									<input type="text" class="form-control form-control-solid" name="phone_number" placeholder="" required/>
-								</div>
-								<div class="mb-10">
-									<label class="required form-label">Project Address</label>
-									<input type="text" class="form-control form-control-solid" name="project_address" placeholder="" required/>
-								</div>
-								<div class="mb-10">
-									<label class="required form-label">Project Documents</label>
-									<input type="file" class="form-control form-control-solid" name="project_documents" placeholder="" multiple required/>
 								</div>
 								<div class="mb-5">
 									<button type="submit" class="btn btn-primary">Submit</button>
@@ -607,23 +612,20 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Block-->
 								<div class="rounded landing-dark-border p-9 mb-10">
 									<!--begin::Title-->
-									<h2 class="text-white">Would you need a Custom License?</h2>
+									<h1 class="text-white text-center">Call now with any Questions.</h1>
 									<!--end::Title-->
 									<!--begin::Text-->
-									<span class="fw-normal fs-4 text-white">Email us to
-									<a href="https://keenthemes.com/support" class="text-white text-hover-primary">support@keenthemes.com</a></span>
+									<h1 class="fw-normal text-white text-center">(336) 496-8902</h1>
 									<!--end::Text-->
 								</div>
 								<!--end::Block-->
 								<!--begin::Block-->
 								<div class="rounded landing-dark-border p-9">
 									<!--begin::Title-->
-									<h2 class="text-white">How About a Custom Project?</h2>
+									<h1 class="text-white text-center">How About a Custom Project?</h1>
 									<!--end::Title-->
 									<!--begin::Text-->
-									<span class="fw-normal fs-4 text-white">Use Our Custom Development Service.
-									<a href="../../demo1/dist/pages/user-profile/overview.html" class="text-white text-hover-primary">Click to Get a Quote</a></span>
-									<!--end::Text-->
+									<h1 class="fw-normal text-white text-center">Use Our Custom Development Service.</h1><!--end::Text-->
 								</div>
 								<!--end::Block-->
 							</div>
