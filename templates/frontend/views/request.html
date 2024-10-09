@@ -5,21 +5,21 @@
     <div class="card-body">
         <div class="d-flex justify-content-start">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="1" checked="checked"/>
+                <input class="form-check-input" type="checkbox" value="1" checked="checked" id="pto_checkbox"/>
                 <label class="form-check-label">
                     PTO
                 </label>
             </div>
             &nbsp;&nbsp;&nbsp;
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="1" checked="checked"/>
+                <input class="form-check-input" type="checkbox" value="1" checked="checked" id="permitting_checkbox"/>
                 <label class="form-check-label">
                     Permitting
                 </label>
             </div>
             &nbsp;&nbsp;&nbsp;
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="1" checked="checked"/>
+                <input class="form-check-input" type="checkbox" value="1" checked="checked" id="interconnection_checkbox"/>
                 <label class="form-check-label">
                     Interconnection
                 </label>
@@ -58,41 +58,41 @@
                </div>
             </div>
         </div>
-        <div class="card" id="ptoApplication">
+        <div class="card" id="pto">
             <div class="card-body">
                <div>
                    <h3>PTO</h3>
                   <hr>
                   <div class="row">
                      <div class="form-group col-lg-6 mb-3">
-                        <label class="mb-2"><strong>System Design Document *</strong></label>
-                        <input type="file" name="pto_system_design_document" class="form-control" required>
+                        <label class="mb-2"><strong>Stamped Plans *</strong></label>
+                        <input type="file" name="pto_stamped_plans" id="pto_stamped_plans" class="form-control" required>
                      </div>
                       <div class="form-group col-lg-6 mb-3">
                         <label class="mb-2"><strong>Utility Bills (Not older than 3 months) *</strong></label>
-                        <input type="file" name="pto_utility_bills" class="form-control" required>
+                        <input type="file" name="pto_utility_bills" id="pto_utility_bills" class="form-control" required>
                      </div>
                      <div class="form-group col-lg-6 mb-3">
                         <label class="mb-2"><strong>Home Owners Contract *</strong></label>
-                        <input type="file" name="pto_home_owners_contract" class="form-control" required>
+                        <input type="file" name="pto_home_owners_contract" id="pto_home_owners_contract" class="form-control" required>
                      </div>
                   </div>
                </div>
             </div>
         </div>
-        <div class="card" id="permittingFormCard">
+        <div class="card" id="permitting">
             <div class="card-body">
                <div>
                   <h3>Permitting</h3>
                   <hr>
                   <div class="row">
-                     <div class="form-group col-lg-6">
-                        <label class="mb-2"><strong>System Design Document *</strong></label>
-                        <input type="file" name="permitting_system_design_document" class="form-control" required>
+                     <div class="form-group col-lg-6 mb-3">
+                        <label class="mb-2"><strong>Stamped Plans *</strong></label>
+                        <input type="file" name="permitting_stamped_plans" id="permitting_stamped_plans" class="form-control" required>
                      </div>
-                     <div class="form-group col-lg-6">
+                     <div class="form-group col-lg-6 mb-3">
                         <label class="mb-2"><strong>Home Owners Contract *</strong></label>
-                        <input type="file" name="permitting_home_owners_contract" class="form-control" required>
+                        <input type="file" name="permitting_home_owners_contract" id="permitting_home_owners_contract" class="form-control" required>
                      </div>
                   </div>
                </div>
@@ -114,4 +114,35 @@
        </div>
     </form>
 </div>
+{% endblock %}
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        $('#pto_checkbox').on('click', function() {
+            if ($(this).is(':checked')) {
+                $('#pto').fadeIn();// Make it visible
+                $('#pto_stamped_plans').attr('required');
+                $('#pto_utility_bills').attr('required');
+                $('#pto_home_owners_contract').attr('required');
+            } else {
+                $('#pto').fadeOut(); // Hide it
+                $('#pto_stamped_plans').removeAttr('required');
+                $('#pto_utility_bills').removeAttr('required');
+                $('#pto_home_owners_contract').removeAttr('required');
+            }
+        });
+
+        $('#permitting_checkbox').on('click', function() {
+            if ($(this).is(':checked')) {
+                $('#permitting').fadeIn();// Make it visible
+                $('#permitting_stamped_plans').attr('required');
+                $('#permitting_home_owners_contract').attr('required');
+            } else {
+                $('#permitting').fadeOut(); // Hide it
+                $('#permitting_stamped_plans').removeAttr('required');
+                $('#permitting_home_owners_contract').removeAttr('required');
+            }
+        });
+    });
+</script>
 {% endblock %}
