@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-s9f3g8)slop*k+6mypv!sz=yrp9gu^@pe2oth^ka166(^61+zh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://peakpermits.com', 'https://www.peakpermits.com', 'www.peakpermits.com', '*']
 
 
 # Application definition
@@ -66,16 +66,25 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'peak_permits',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASS': '',
-        'PORT': 3306
+        'NAME': 'mountainsautomat$peak-permits',
+        'USER': 'mountainsautomat',
+        'PASSWORD': 'Friend453!?',
+        'HOST': 'mountainsautomation.mysql.pythonanywhere-services.com',
+        'PORT': 3306,
     }
 }
+"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
 
 
 # Password validation
@@ -113,7 +122,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = ['static']
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+#STATICFILES_DIRS = ['static']
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'documents/')
 MEDIA_URL = '/documents/'
@@ -122,3 +132,7 @@ MEDIA_URL = '/documents/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGIN_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/login/'  # Redirect here after logout

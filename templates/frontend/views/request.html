@@ -1,0 +1,117 @@
+{% extends 'frontend/base/base.html' %}
+
+{% block content %}
+<div class="card mb-5">
+    <div class="card-body">
+        <div class="d-flex justify-content-start">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="1" checked="checked"/>
+                <label class="form-check-label">
+                    PTO
+                </label>
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="1" checked="checked"/>
+                <label class="form-check-label">
+                    Permitting
+                </label>
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="1" checked="checked"/>
+                <label class="form-check-label">
+                    Interconnection
+                </label>
+            </div>
+        </div>
+    </div>
+    <form id="PermittingForm" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="card">
+            <div class="card-body">
+                <div>
+                  <h3>Basic Details</h3>
+                  <hr>
+                  <div class="row">
+                     <div class="form-group col-lg-4 mb-3">
+                        <label class="mb-2"><strong>Home Owner's Name *</strong></label>
+                        <input type="text" class="form-control" name="name" placeholder="Enter name" required>
+                     </div>
+                     <div class="form-group col-lg-4 mb-3">
+                        <label class="mb-2"><strong>Home Owner's Address *</strong></label>
+                        <input type="text" class="form-control" name="email" placeholder="Enter email" required>
+                     </div>
+                     <div class="form-group col-lg-4 mb-3">
+                        <label class="mb-2"><strong>Home Owner's Email Address *</strong></label>
+                        <input type="text" class="form-control" name="address" placeholder="Enter address" required>
+                     </div>
+                     <div class="form-group col-lg-4 mb-3">
+                        <label class="mb-2"><strong>Home Owner's AHJ Company *</strong></label>
+                        <input type="text" class="form-control" name="address" placeholder="Enter address" required>
+                     </div>
+                     <div class="form-group col-lg-4 mb-3">
+                        <label class="mb-2"><strong>Phone *</strong></label>
+                        <input type="text" class="form-control" name="address" placeholder="Enter address" required>
+                     </div>
+                  </div>
+               </div>
+            </div>
+        </div>
+        <div class="card" id="ptoApplication">
+            <div class="card-body">
+               <div>
+                   <h3>PTO</h3>
+                  <hr>
+                  <div class="row">
+                     <div class="form-group col-lg-6 mb-3">
+                        <label class="mb-2"><strong>System Design Document *</strong></label>
+                        <input type="file" name="pto_system_design_document" class="form-control" required>
+                     </div>
+                      <div class="form-group col-lg-6 mb-3">
+                        <label class="mb-2"><strong>Utility Bills (Not older than 3 months) *</strong></label>
+                        <input type="file" name="pto_utility_bills" class="form-control" required>
+                     </div>
+                     <div class="form-group col-lg-6 mb-3">
+                        <label class="mb-2"><strong>Home Owners Contract *</strong></label>
+                        <input type="file" name="pto_home_owners_contract" class="form-control" required>
+                     </div>
+                  </div>
+               </div>
+            </div>
+        </div>
+        <div class="card" id="permittingFormCard">
+            <div class="card-body">
+               <div>
+                  <h3>Permitting</h3>
+                  <hr>
+                  <div class="row">
+                     <div class="form-group col-lg-6">
+                        <label class="mb-2"><strong>System Design Document *</strong></label>
+                        <input type="file" name="permitting_system_design_document" class="form-control" required>
+                     </div>
+                     <div class="form-group col-lg-6">
+                        <label class="mb-2"><strong>Home Owners Contract *</strong></label>
+                        <input type="file" name="permitting_home_owners_contract" class="form-control" required>
+                     </div>
+                  </div>
+               </div>
+            </div>
+        </div>
+         <div class="card" id="interconnectionFormCard">
+            <div class="card-body">
+               <div>
+                  <h3>Interconnection</h3>
+                  <hr>
+                  <div class="row">
+
+                  </div>
+               </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end mt-3 m-5">
+          <button type="submit" class="btn btn-primary">Save changes</button>
+       </div>
+    </form>
+</div>
+{% endblock %}
